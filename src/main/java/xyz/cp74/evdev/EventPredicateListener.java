@@ -2,11 +2,23 @@ package xyz.cp74.evdev;
 
 import java.util.function.Predicate;
 
+/**
+ * 
+ * EventPtedicateListener wrappes an EventListener listen to events from input devices only if a predicate is fullfilled.
+ * 
+ * @author Christian Paul
+ *
+ */
 public class EventPredicateListener implements EventListener {
     
     EventListener listener;
     Predicate<Integer> predicate;
 
+    /**
+     * Instantiates a new EventPredicateListener
+     * @param listener
+     * @param predicate
+     */
     public EventPredicateListener(EventListener listener, Predicate<Integer> predicate) {
         this.listener = listener;
         this.predicate = predicate;

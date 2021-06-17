@@ -29,9 +29,8 @@ import java.util.function.Predicate;
  * @author Christian Paul
  *
  */
-public class InputDevice  {
+public class InputDevice implements InputDevicePath  {
 
-	
 	// input device path
 	private String path = null;
 	private Path monitorPath;
@@ -54,7 +53,6 @@ public class InputDevice  {
     
     // thread pool
     ExecutorService threadPool = Executors.newCachedThreadPool();
-
     
 	// listeners
     private Map<Integer, EventListener> eventListeners = new ConcurrentHashMap<Integer, EventListener>();
@@ -74,24 +72,40 @@ public class InputDevice  {
     }
     
     /**
+	 * @return the path of the input device
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
      * Set delay before next connecting attempt in milliseconds
-     * @param connectionDelay delay before next connecting attempt in milliseconds
+     * @param connectionDelay delay in milliseconds
      */
     public void setConnectionDelay(int connectionDelay) {
         this.connectionDelay = connectionDelay;
     }
 
     /**
-     * Get delay before next connecting attempt in milliseconds
+     * Get the delay before next connecting attempt in milliseconds
+     * @return the delay in milliseconds
      */
     public int getConnectionDelay() {
         return connectionDelay;
     }
 
+    /**
+     * Get the maximal attempts of open input device path
+     * @return maximal attempts
+     */
     public int getMaxConnectionAttemps() {
         return maxConnectionAttemps;
     }
 
+    /**
+     * Set the maximal attempts of open input device path
+     * @param maxConnectionAttemps maximal attempts
+     */
     public void setMaxConnectionAttemps(int maxConnectionAttemps) {
         this.maxConnectionAttemps = maxConnectionAttemps;
     }
