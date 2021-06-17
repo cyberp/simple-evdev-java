@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <!-- header -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>xyz.cp74</groupId>
+  <artifactId>evdev</artifactId>
+  <name>Simple evdev for Java</name>
+  <version>1.0</version>
+  <description>Simple reader of Linux input device events (evdev) for Java</description>
+  <url>https://github.com/cyberp/simple-evdev-java</url>
+  <packaging>jar</packaging>
+  
+  <!-- license informations -->
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+  	</license>
+  </licenses>
+  
+  <!-- developers -->
+  <developers>
+    <developer>
+      <name>Christian Paul</name>
+      <email>info@cp74.xyz</email>
+    </developer>
+  </developers>
+ 
+  <!-- properties -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
+  
+  <!-- plugins -->
+  <build>
+    <plugins>
+    
+      <!-- generate sources jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <!-- generate javadoc jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <doclint>all,-missing</doclint>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>      
+      
+    </plugins>
+  </build>
+
+</project>
