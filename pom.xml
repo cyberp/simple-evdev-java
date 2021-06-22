@@ -15,7 +15,6 @@
     <license>
       <name>The Apache Software License, Version 2.0</name>
       <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
   	</license>
   </licenses>
   
@@ -34,6 +33,13 @@
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
   
+  <!-- github scm -->
+  <scm>
+    <connection>scm:git:https://github.com/cyberp/simple-evdev-java.git</connection>
+    <developerConnection>scm:git:https://github.com/cyberp/simple-evdev-java.git</developerConnection>
+    <url>https://github.com/cyberp/simple-evdev-java</url>
+  </scm>
+
   <!-- plugins -->
   <build>
     <plugins>
