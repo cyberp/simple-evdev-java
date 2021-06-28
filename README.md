@@ -7,6 +7,16 @@ The events are read directly from the pathes */dev/input/event[0..n]*. You need 
 
 This project was created by the needs of having a simple tool to use an Xbox One Controller as input devices in projects. It was inspired by [evdev-java](https://github.com/progman32/evdev-java) library.
 
+## Maven Dependency
+
+To use in maven projects as dependecy:
+
+	<dependency>
+	  <groupId>xyz.cp74</groupId>
+	  <artifactId>evdev</artifactId>
+	  <version>1.0</version>
+	</dependency>
+
 ## Using the library
 
 To read events instantiate a *InputDevice* object with the path to read for. 
