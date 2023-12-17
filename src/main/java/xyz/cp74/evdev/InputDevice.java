@@ -52,6 +52,7 @@ public class InputDevice implements InputDevicePath  {
     private int maxConnectionAttemps = 10;
     
     // thread pool
+    private final ExecutorService globalExecutor = Executors.newSingleThreadExecutor();
     ExecutorService threadPool = Executors.newCachedThreadPool();
     
 	// listeners
@@ -259,7 +260,7 @@ public class InputDevice implements InputDevicePath  {
 	                    e.value = buffer.getInt();
 	                    // send event to listeners
                         if (globalListener!=null) 
-                            threadPool.execute(()->globalListener.onEvent(e));
+                            globalExecutor.execute(()->globalListener.onEvent(e));
 		                if (eventListeners.containsKey(e.getTypeCode()))
 			                threadPool.execute(()->eventListeners.get(e.getTypeCode()).onEvent(e));
                     }
